@@ -12,7 +12,7 @@ def organize_images():
     target_path = Path(TARGET_DIR)
 
     if not source_path.exists():
-        print(f"❌ Error: Source folder '{SOURCE_DIR}' not found!")
+        print(f"Error: Source folder '{SOURCE_DIR}' not found!")
         return
 
     # Create target directory if it doesn't exist
