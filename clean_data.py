@@ -4,8 +4,8 @@ from pathlib import Path
 
 # --- CONFIGURATION ---
 # Change this to point to your raw dataset folder
-SOURCE_DIR = "raw_data/foodd-ieee" 
-TARGET_DIR = "./food-classifier-model"
+SOURCE_DIR = "" 
+TARGET_DIR = ""
 
 def organize_images():
     source_path = Path(SOURCE_DIR)
@@ -17,7 +17,7 @@ def organize_images():
 
     # Create target directory if it doesn't exist
     if target_path.exists():
-        print(f"⚠️ Warning: Target folder '{TARGET_DIR}' already exists.")
+        print(f"Warning: Target folder '{TARGET_DIR}' already exists.")
     else:
         target_path.mkdir(parents=True)
 
@@ -49,8 +49,8 @@ def organize_images():
                     total_moved += 1
 
     print("-" * 30)
-    print(f"✅ Success! Moved {total_moved} images to '{TARGET_DIR}'")
-    print(f"👉 Now update your train.py to use: DATASET_DIR = '{TARGET_DIR}'")
+    print(f"Success! Moved {total_moved} images to '{TARGET_DIR}'")
+    print(f"Now update your train.py to use: DATASET_DIR = '{TARGET_DIR}'")
 
 if __name__ == "__main__":
     organize_images()
